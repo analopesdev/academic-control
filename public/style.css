@@ -8,23 +8,13 @@
 }
 
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #007bff;
+
+  --gray-light: #3f4246d7;
+  --gray-dark: #25272a;
   --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
+  --yellow: #fffb07;
+  --danger: #ec1026d2;
   --light: #f8f9fa;
-  --dark: #343a40;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -42,14 +32,14 @@
 
 /* menu */
 body{
-  background-color: #000;
-  color: black;
+  background-color: var(--gray-dark);
+  color: var(--light);
   font-size: var(--alturaMe);
   font-family:var(--fontSize)
 }
 
 header{
-  background-color: maroon;
+  background-color: var(--danger);
   box-sizing: border-box;
 }
 
@@ -99,7 +89,7 @@ header .links a+a{
 
 /* menu hamburguer*/
 .menu {
-  background: #fff;
+  background: var(--danger);
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -163,7 +153,7 @@ input:checked ~ label .hamburguer:after {
 .card{
   background-color: rgba(63, 59, 59, 0.397);
   width: 900px;
-  height: 500px;
+  min-height: 400px;
   margin: 45px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -180,4 +170,62 @@ input:checked ~ label .hamburguer:after {
   to{
     opacity: 1;
   }
+}
+
+.details{
+  padding: 32px;
+}
+
+.details .item{
+  border-bottom: 1px solid var(--gray-light);
+  padding: 16px 0;
+}
+
+/*pegando a ultima classe .item*/
+.details .item:last-child{
+  border: none;
+}
+
+/*pegando a primeira div*/
+.details .item div:nth-child(1){
+  color: #aaa;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.7px;
+  font-weight: normal;
+}
+
+/*pegando a segunda div*/
+.details .item div:nth-child(2){
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.details h3{
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--danger);
+}
+
+.details .item div:nth-child(2) span{
+  padding: 5px 16px;
+  color: #25272a;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-right: 16px;
+  background-color: var(--yellow);
+  border-radius: 5px;
+  width: 100px;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.nao{
+  background-color: #fffb07;
+  height: 30px;
+  width: 100px;
 }

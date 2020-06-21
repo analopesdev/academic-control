@@ -1,20 +1,21 @@
-const express = require('express')
-const server = express()
-const nunjucks = require('nunjucks')
-const routes = require('./routes')
+// Importa o express
+const express = require('express');
+const nunjucks = require('nunjucks');
+const routes = require('./routes');
 
-server.set("view engine", "njk")
+const server = express();
 
-//Middwres
-server.use(express.static('public'))
-server.use(routes)
+server.use(express.static('public'));
 
-nunjucks.configure("views",{
-    express:server,
+server.use(routes);
+
+server.set('view engine', 'njk');
+
+nunjucks.configure('views', {
+    express: server,
     noCache: true
-})
+});
 
-/* rum server*/
-server.listen(5000, () => {
-    console.log('Server os Running')
-})
+server.listen(5000, function () {
+    console.log("Server is running.");
+});

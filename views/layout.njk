@@ -1,31 +1,26 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
-  <title>Gym Manager</title>
-  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head>
-<body>
 
-  <!-- menu -->
-  <header>
-    <div class="links">
-      <a class="links-a active" href="/">Instructors</a>
-      <a class="links-a" href="/members">Members</a>
-    </div>
+    <head>
+        {% block head %}
+            <title>Controle de Academia</title>
+        {% endblock %}
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
 
-    <input id="menu-hamburguer" type="checkbox" />
-    <label for="menu-hamburguer">
-      <div class="menu">
-        <span class="hamburguer"></span>
-      </div>
-    </label>
-  </header>
-  {% block content %}
-   
-  {% endblock %}
+    <body>
+        <header>
+            <div class="links">
+                <a href="/instructors">Instrutores</a>
 
-</body>
+                <a href="/members">Membros</a>
+            </div>
+        </header>
+
+        {% block content %}
+        
+        {% endblock %}
+
+        <script src="/js/scripts.js"></script>
+    </body>
+
 </html>
