@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/* global */
+*{
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --alturaMin: 14px;
+  --alturaMe: 16px;
+  --alturaMax: 40px;
+  --fontSize: "Poppins";
+}
+
+.links, .wrapper, .links-footer{
+  text-align: center;
+}
+
+/* menu */
+body{
+  background-color: #000;
+  color: black;
+  font-size: var(--alturaMe);
+  font-family:var(--fontSize)
+}
+
+header{
+  background-color: maroon;
+  box-sizing: border-box;
+}
+
+header .links{
+  padding: 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+header .links a{
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease 0s;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+header .links a+a{
+   margin-left: 32px;
+}
+
+.links a.active{
+  font-weight: bold;
+  color: #000;
+}
+
+.links a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  bottom: -4px; 
+}
+.links a:hover::after{
+  width: 100%;
+  transition: width 300ms cubic-bezier(1, 0, 0.35, 0.01);
+}
+.links a:hover{
+  color: #000;
+  font-weight: 600;
+}
+
+/* menu hamburguer*/
+.menu {
+  background: #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  top: 20px;
+  right: 25px;
+}
+
+.hamburguer {
+  position: relative;
+  display: block;
+  margin: 5px;
+  background: #000;
+  width: 25px;
+  height: 2px;
+  border: none;
+  top: 18px;
+  left: 6px;
+  transition: 0.5s ease-in-out;
+}
+
+.hamburguer:before,
+.hamburguer:after {
+  background: #000;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+}
+
+.hamburguer:before {
+  top: -10px;
+}
+
+.hamburguer:after {
+  bottom: -10px;
+}
+
+input {
+  display: none;
+}
+
+input:checked ~ label .hamburguer {
+  transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+input:checked ~ label .hamburguer:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+/* card */
+
+.card{
+  background-color: rgba(63, 59, 59, 0.397);
+  width: 900px;
+  height: 500px;
+  margin: 45px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0px 2px 5px rgb(71, 69, 69);
+  animation-name: up;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+}
+
+@keyframes up{
+  from{
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
