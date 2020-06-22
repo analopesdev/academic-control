@@ -1,5 +1,6 @@
 const express = require('express')
 const routes = express.Router()
+const instructors = require('./instructors')
 
 routes.get('/', function(req, res){
     return res.redirect("/instructors")
@@ -17,16 +18,5 @@ routes.get('/instructors/create', (req, res) =>{
     return res.render("instructors/create")
 })
 
-routes.post('/instructors', (req, res) =>{
-    //req.body
-    //cria um array com as chaves no objeto
-    const keys = Object.keys(req.body)
-
-    for(let key of keys){
-        //req.body.key == ""
-       if(req.body[key] == "" )
-           return res.send('Please, fill all filds')
-    }
-    return res.send(req.body)
-})
+routes.post('/instructors', instructors.post)
 module.exports = routes

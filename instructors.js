@@ -1,4 +1,4 @@
-//create
+
 exports.post = (req, res) =>{
     //req.body
     //cria um array com as chaves no objeto
@@ -11,5 +11,3 @@ exports.post = (req, res) =>{
     }
     return res.send(req.body)
 }
-//update
-//delete
