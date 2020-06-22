@@ -19,4 +19,5 @@ routes.get('/instructors/create', (req, res) =>{
 })
 
 routes.post('/instructors', instructors.post)
+
 module.exports = routes

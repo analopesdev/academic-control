@@ -1,6 +1,9 @@
 {
   "name": "controle-academia",
   "main": "server.js",
+  "author": {
+    "name": "Ana Lopes"
+  },
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
     "nodemon": "nodemon server.js",
