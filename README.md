@@ -11,7 +11,7 @@ Sistema para controle de academia.
 
 ```bash
 # Clone o repositório
-$ git clone https://github.com/imsantosrodrigo/controle-academia.git
+$ https://github.com/analopesdev/academic-control.git
 
 # Acesse o diretório
 $ cd controle-academia
