@@ -2,22 +2,29 @@ const express = require('express')
 const routes = express.Router()
 const instructors = require('./instructors')
 
-routes.get('/', function(req, res){
-    return res.redirect("/instructors")
+/* ====== ROUTES ====== */
+// Rota principal 
+routes.get('/', (req, res) =>{
+    return res.redirect('/instructors')
 })
 
-routes.get('/instructors', function(req, res){
-    return res.render("instructors/index")
+//rota instructors
+routes.get('/instructors', (req, res) =>{
+    return res.render('instructors/index')
 })
 
-routes.get('/members', function(req, res){
-    return res.send("members")
-})
-
+//rota instructors create
 routes.get('/instructors/create', (req, res) =>{
-    return res.render("instructors/create")
+    return res.render('instructors/create')
 })
 
-routes.post('/instructors', instructors.post)
+routes.get('/instructors/:id', instructors.show)
+
+//inserindo formulario create na página instructors
+routes.post("/instructors", instructors.post)
+
+routes.get('/members', (req, res) =>{
+    return res.send('members')
+})
 
 module.exports = routes

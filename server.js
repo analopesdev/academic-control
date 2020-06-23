@@ -1,14 +1,13 @@
-// Importa o express
 const express = require('express');
 const nunjucks = require('nunjucks');
-const routes = require('./routes');
+const routes = require('./routes')
 
 const server = express();
 
+// Linha responsável por fazer funcionar o req.body recebendo os daados do formlulario
+server.use(express.urlencoded({ extended:true}))
 server.use(express.static('public'));
-server.use(express.urlencoded({ extended: true}))
-
-server.use(routes);
+server.use(routes)
 
 server.set('view engine', 'njk');
 
