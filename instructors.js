@@ -23,7 +23,7 @@ exports.show = (req, res) =>{
     }
     return res.render("instructors/show", {instructor})
 }
-
+//post
 exports.post = (req, res) =>{
 
     //cria um array com os campos "chaves"  o req.body formulario
@@ -84,4 +84,30 @@ exports.edit = (req, res) =>{
     }
 
     return res.render('instructors/edit', {instructor})
+}
+//put
+exports.put = (req, res) =>{
+    const { id } = req.body
+    let index = 0
+    //procurando se instructor está cadastrado
+    const foundInstructor = data.instructors.find(function(instructor, foundIndex){
+        if(id == instructor.id){
+            index = foundIndex
+            return true
+        }
+    })
+
+    if(!foundInstructor){
+        return res.send('Instructor not found')
+    }
+    const instructor ={
+        ...foundInstructor,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }
+    data.instructors[index] = instructor
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
+        if(err)return res.send("write error")
+        return res.redirect(`/instructors/${id}`)
+    })
 }

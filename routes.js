@@ -29,4 +29,15 @@ routes.get('/members', (req, res) =>{
     return res.send('members')
 })
 
+routes.put("instructors", instructors.put)
+
 module.exports = routes
+
+/**
+ * HTTP VERBS
+ * GET : RECEBER RESOURCE
+ * POST : CRIAR RESOURCE
+ * POST : CRIAR UM NOVO RESOURCE COM DADOS ENVIADOS
+ * PUT : ATUALIZAR RESOURCE
+ * DELETE : DELETAR RESOURCE
+ *  */ 
