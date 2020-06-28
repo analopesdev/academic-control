@@ -1,7 +1,6 @@
 const fs = require('fs')
 const data = require("./data.json")
-const { age } = require('./utils')
-
+const { age, date } = require('./utils')
 
 //mostrar usuario passando como parametro o id
 exports.show = (req, res) =>{
@@ -9,6 +8,7 @@ exports.show = (req, res) =>{
     const foundInstructor = data.instructors.find(function(instructor){
         return instructor.id == id
     })
+
     if(!foundInstructor){
         return res.send('Instructor not found')
     }
@@ -16,6 +16,7 @@ exports.show = (req, res) =>{
     const instructor ={
         ...foundInstructor,
         age: age(foundInstructor.birth),
+
         // transformar objeto em array
         services: foundInstructor.services.split(","),
         created_at: Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
@@ -64,6 +65,23 @@ exports.post = (req, res) =>{
         if(err) return res.send("Write file error")
         return res.redirect("/instructors")
     })
+
     return res.send(req.body)
 }
+//edit
+exports.edit = (req, res) =>{
+    const { id } = req.params
+    const foundInstructor = data.instructors.find(function(instructor){
+        return instructor.id == id
+    })
 
+    if(!foundInstructor){
+        return res.send('Instructor not found')
+    }
+    const instructor = {
+        ...foundInstructor,
+        birth: date(foundInstructor.birth)
+    }
+
+    return res.render('instructors/edit', {instructor})
+}

@@ -163,3 +163,14 @@ button[type="submit"]{
     color: white;
     height: 30px;
 }
+
+a.button{
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    background-color: rgb(21, 136, 202);
+    color: white;
+    border-radius: 5px;
+}

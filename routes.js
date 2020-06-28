@@ -20,6 +20,8 @@ routes.get('/instructors/create', (req, res) =>{
 
 routes.get('/instructors/:id', instructors.show)
 
+routes.get('/instructors/:id/edit', instructors.edit)
+
 //inserindo formulario create na página instructors
 routes.post("/instructors", instructors.post)
 
