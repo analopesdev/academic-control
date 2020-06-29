@@ -25,11 +25,13 @@ routes.get('/instructors/:id/edit', instructors.edit)
 //inserindo formulario create na página instructors
 routes.post("/instructors", instructors.post)
 
+routes.put("/instructors", instructors.put)
+
+routes.delete("/instructors", instructors.delete)
+
 routes.get('/members', (req, res) =>{
     return res.send('members')
 })
-
-routes.put("instructors", instructors.put)
 
 module.exports = routes
 

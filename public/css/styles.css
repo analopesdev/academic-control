@@ -174,3 +174,7 @@ a.button{
     color: white;
     border-radius: 5px;
 }
+
+#form-delete button[type="submit"]{
+    background-color: brown;
+}

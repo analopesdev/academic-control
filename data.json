@@ -1,29 +1,20 @@
 {
   "instructors": [
     {
-      "id": 1,
-      "avatar_url": "https://avatars0.githubusercontent.com/u/54561217?s=460&u=00a648beaabe14d83eccf67bf184b8c0123c3dbd&v=4",
-      "name": "Ana Lúcia",
-      "birth": 850694400000,
-      "created_at": 1592934862704,
-      "gender": "F",
-      "services": "ssa"
-    },
-    {
-      "id": 2,
-      "avatar_url": "https://avatars0.githubusercontent.com/u/54561217?s=460&u=00a648beaabe14d83eccf67bf184b8c0123c3dbd&v=4",
-      "name": "Maria Aparecida Lopes Ferreira",
-      "birth": 470620800000,
-      "created_at": 1592934945548,
-      "gender": "F",
-      "services": "dsd"
-    },
-    {
       "id": 3,
       "avatar_url": "https://avatars0.githubusercontent.com/u/54561217?s=460&u=00a648beaabe14d83eccf67bf184b8c0123c3dbd&v=4",
       "name": "Ana Lúcia",
       "birth": 1552348800000,
       "created_at": 1593373635495,
+      "gender": "F",
+      "services": "dfre"
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://avatars0.githubusercontent.com/u/54561217?s=460&u=00a648beaabe14d83eccf67bf184b8c0123c3dbd&v=4",
+      "name": "Ana Lúcia",
+      "birth": -48149769600000,
+      "created_at": 1593435502603,
       "gender": "F",
       "services": "dfre"
     }

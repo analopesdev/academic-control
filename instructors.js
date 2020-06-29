@@ -5,6 +5,7 @@ const { age, date } = require('./utils')
 //mostrar usuario passando como parametro o id
 exports.show = (req, res) =>{
     const { id } = req.params
+
     const foundInstructor = data.instructors.find(function(instructor){
         return instructor.id == id
     })
@@ -109,5 +110,17 @@ exports.put = (req, res) =>{
     fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
         if(err)return res.send("write error")
         return res.redirect(`/instructors/${id}`)
+    })
+}
+//delete
+exports.delete = (req, res) =>{
+    const {id} = req.body
+    const filteredInstructors = data.instructors.filter(function(instructor){
+        return instructor.id != id
+    })
+    data.instructors = filteredInstructors
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if(err) return res.send("write file error")
+        return res.redirect("/instructors")
     })
 }
