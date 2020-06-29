@@ -178,3 +178,31 @@ a.button{
 #form-delete button[type="submit"]{
     background-color: brown;
 }
+
+/* Index Instructors */
+
+.table-container{
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table{
+    border-spacing: 0;
+}
+
+.table-container thead tr th{
+    text-align: left;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
+td, th{
+    padding: 16px;
+    border-bottom: 1px solid #ffffff57;
+    color: white;
+}
+
+tbody tr:last-child td{
+    border-bottom: none;
+}
