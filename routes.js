@@ -9,9 +9,7 @@ routes.get('/', (req, res) =>{
 })
 
 //rota instructors
-routes.get('/instructors', (req, res) =>{
-    return res.render('instructors/index')
-})
+routes.get('/instructors', instructors.index)
 
 //rota instructors create
 routes.get('/instructors/create', (req, res) =>{
