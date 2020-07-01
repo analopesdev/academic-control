@@ -59,7 +59,6 @@ yarn-error.log*
 
 
 # Dependency directories
-src/config/
 node_modules/
 jspm_packages/
 
@@ -90,3 +89,6 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#keys
+/src/config/db.js
